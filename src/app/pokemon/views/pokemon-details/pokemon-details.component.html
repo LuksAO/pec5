@@ -1,0 +1,20 @@
+<ng-container *ngIf="(pokemon$ | async) as pokemon">
+  <div class="container pt-5">
+    <div class="btn btn-primary" routerLink="/">
+      Back
+    </div>
+
+    <div class="card pokemon-card mx-auto">
+      <div class="d-flex justify-content-center">
+        <img [src]="pokemon.sprites.front_default">
+        <img [src]="pokemon.sprites.back_default">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"> {{pokemon.name | titlecase }} </h5>
+        <div><strong>Altura:</strong> {{pokemon.height}} ft</div>
+        <div><strong>Peso:</strong> {{pokemon.weight}} lb</div>
+        <div><strong>Experiencia base:</strong> {{pokemon.base_experience}}</div>
+      </div>
+    </div>
+  </div>
+</ng-container>
